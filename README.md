@@ -5,7 +5,7 @@
 ## "Defter, easier and quicker to develop your GUI Apps using Python in the built-in browser."
 ### URL: https://github.com/BarryWangQwQ/Defter
 ### Git: https://github.com/BarryWangQwQ/Defter.git
-### Author: `BarryWang`
+### Author: `BarryWang` `BOOKAI`
 
 
 ## 1. Quick Start
@@ -42,9 +42,16 @@ defter-cli -js2py [here / your path]
 defter-cli -package [here / your 'main.py' path]
 ```
 
+### 1.3 快速体验
+
+#### 直接执行创建出的main.py模板
+```sh
+python main.py
+```
+
 ## 2. 目录结构说明
 
-`mian.py` App的后端服务主要入口：
+`main.py` App的后端服务主要入口：
 
 - `用于编写后端服务程序和App启动配置`
 
