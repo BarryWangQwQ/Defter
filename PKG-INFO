@@ -1,0 +1,14 @@
+Metadata-Version: 1.2
+Name: defter
+Version: 1.0b0
+Summary: Project Defter App
+Home-page: https://github.com/BarryWangQwQ/defter
+Author: BarryWang
+Author-email: StarBarry777@qq.com
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6

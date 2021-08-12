@@ -1,0 +1,12 @@
+README.md
+README.rst
+setup.py
+defter/__init__.py
+defter/backend.py
+defter/cli.py
+defter.egg-info/PKG-INFO
+defter.egg-info/SOURCES.txt
+defter.egg-info/dependency_links.txt
+defter.egg-info/entry_points.txt
+defter.egg-info/requires.txt
+defter.egg-info/top_level.txt

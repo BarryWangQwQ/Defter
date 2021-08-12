@@ -1,0 +1,3 @@
+[console_scripts]
+defter-cli = defter.cli:main
+
