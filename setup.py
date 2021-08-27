@@ -5,29 +5,54 @@ Author     : BarryWang
 Description: Project Defter App
 """
 
-import setuptools
+import sys
+from io import open
+from setuptools import setup, find_packages
+
+with open('README.md') as read_me:
+    long_description = read_me.read()
 
 
-setuptools.setup(
-    name='defter',  # 模块名称
-    version="1.0b0",  # 当前版本
-    author="BarryWang",  # 作者
-    author_email="StarBarry777@qq.com",  # 作者邮箱
-    description="Project Defter App",  # 模块简介
-    url="https://github.com/BarryWangQwQ/defter",  # 模块github地址
-    packages=setuptools.find_packages(),  # 自动找到项目中导入的模块
-    # 添加这个选项，在windows下Python目录的scripts下生成exe文件
-    # 注意：模块与函数之间是冒号:
+def platform_requires():
+    max_bit = sys.maxsize
+    if max_bit > 2 ** 32:
+        return ['bottle', 'bottle-websocket', 'future', 'pyparsing', 'whichcraft', 'transcrypt', 'orjson']
+    else:
+        return ['bottle', 'bottle-websocket', 'future', 'pyparsing', 'whichcraft', 'transcrypt']
+
+
+setup(
+    name='defter',
+    version="2.0b0",
+    author="BarryWang",
+    author_email="StarBarry777@qq.com",
+    description="Project Defter App",
+    url="https://github.com/BarryWangQwQ/defter",
+    packages=find_packages(),
+    package_data={
+        '': ['*.js', '*.ico', '*.frontend', '__init__.acceleration', '__init__.default'],
+    },
+    install_requires=platform_requires(),
+    extras_require={
+        "jinja2": ['jinja2>=2.10']
+    },
+    python_requires='>=3.6',
+    long_description=long_description,
+    long_description_content_type='text/markdown',
+    keywords=['defter', 'gui', 'python', 'html', 'javascript', 'electron'],
     entry_points={'console_scripts': [
-        'defter-cli = defter.cli:main',
+        'defter = defter.feature.cli:main',
+        'defter-frontendc = defter.feature.frontendc:main',
+        'defter-packager = defter.backend.__main__:main',
+        'defter-accelerator = defter.feature.accelerator:main',
     ]},
-    # 模块相关的元数据
     classifiers=[
         "Programming Language :: Python :: 3",
-        "License :: OSI Approved :: MIT License",
-        "Operating System :: OS Independent",
+        'Development Status :: 4 - Beta',
+        'License :: OSI Approved :: MIT License',
+        'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3.8',
+        'Programming Language :: Python :: 3.9',
     ],
-    # 依赖模块
-    install_requires=['Eel', 'brython'],
-    python_requires='>=3.6',
 )

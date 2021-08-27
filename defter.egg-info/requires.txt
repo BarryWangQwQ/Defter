@@ -1,2 +1,10 @@
-Eel
-brython
+bottle
+bottle-websocket
+future
+pyparsing
+whichcraft
+transcrypt
+orjson
+
+[jinja2]
+jinja2>=2.10
