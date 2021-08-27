@@ -71,6 +71,14 @@ cd [defter project path] # 确保该项目下存在后端python文件，同时�
 defter-packager [back-end python file] [src directory] # 可选参数: -F 打包成一个可执行文件(有Console) -Fw 打包成一个可执行文件(无Console)
 ```
 
+###### 1.3.4 defter-accelerator.exe / defter-accelerator.sh / defter-accelerator
+
+#### 数据交换加速器 (Only 64bit)
+
+```sh
+defter-accelerator [True / False] # 开启可大幅提升对象数据的序列化和反序列化性能，适用于大数据量高并发的App类型，但必须是64位的环境才被允许开启。
+```
+
 ## 2. 项目结构
 
 `backend.py` App的后端服务主要入口(可自定义命名)：
@@ -110,7 +118,8 @@ defter-packager [back-end python file] [src directory] # 可选参数: -F 打包
 ####新增特性:   
 > 1 后端 (back-end) 引入基于线程的协程并发，绕过Python GIL全局解释器锁，大幅提升App性能，解决了高并发异步方法引起的严重性阻塞问题。  
 2 前端 (front-end) 的模拟Python实现由原先的纯解释器解释模式转变为编译解释混合执行模式，并可与Google Chromium V8 JIT即时编译技术相互工作，大幅提升加载速度以及性能。  
-3 前端 (front-end) 让重要逻辑运行在 DefterVM (Defter Virtual Machine) 虚拟机上，在尽可能不损失性能的情况下，使得Javascript解释器无权干涉内建虚拟机从而保证执行的安全，大幅降低了前端 (front-end) 被恶意调试代码的可能。
+3 前端 (front-end) 让重要逻辑运行在 DefterVM (Defter Virtual Machine) 虚拟机上，在尽可能不损失性能的情况下，使得Javascript解释器无权干涉内建虚拟机从而保证执行的安全，大幅降低了前端 (front-end) 被恶意调试代码的可能。  
+4 前后两端 数据交换加速器 (仅限64位环境开启）使用 R lang 重构的json序列化和反序列化工具，开启后可拥有强劲的大数据对象交换速度和传输性能。
 
 ####已知问题:   
 > 由于基于线程的协程引入，暂不支持中央处理器单元的多核心负载分配。
