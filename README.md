@@ -10,7 +10,7 @@
 <div>
 <div> </div>
 <img src="https://img.shields.io/pypi/l/defter?style=for-the-badge" alt="license" />
-<img src="https://img.shields.io/pypi/v/defter?style=for-the-badge" alt="pypiversion" />
+<img src="https://img.shields.io/pypi/v/defter?color=orange&style=for-the-badge" alt="pypiversion" />
 <img src="https://img.shields.io/pypi/pyversions/defter?style=for-the-badge" alt="pyversions" />
 <img src="https://camo.githubusercontent.com/9e08593ef5174a8466232c462ee6f7cfb53679acf2acbadd5f7c7b0bf5eb1ee0/68747470733a2f2f696d672e736869656c64732e696f2f6c67746d2f67726164652f707974686f6e2f672f73616d75656c6877696c6c69616d732f45656c2e7376673f6c6f676f3d6c67746d267374796c653d666f722d7468652d6261646765" alt="codequal" />
 </div>
@@ -42,18 +42,18 @@ python backend.py
 ### 1.3 Cli命令
 
 ###### 1.3.1 defter.exe / defter.sh / defter
-#### 生成示例
+### 生成示例
 ```sh
 defter -demo [here / other path]
 ```
 
-#### 创建项目
+### 创建项目
 ```sh
 defter -create [here / other path]
 ```
 
 ###### 1.3.2 defter-frontendc.exe / defter-frontendc.sh / defter-frontendc
-#### 编译前端文件
+### 编译前端文件
 ```sh
 defter-frontendc [front-end python file] [src directory] # 编译.py前端文件并输出到指定资源目录 (两参数均为绝对路径)
 ```
@@ -66,7 +66,7 @@ defter-frontendc [front-end python file] [src directory] # 编译.py前端文件
 Tip: 在后端 (back-end) Python文件中只需在 Backend.Start() 中引入`xxx.frontend`即可指明前端 (front-end)的入口。
 
 ###### 1.3.3 defter-packager.exe / defter-packager.sh / defter-packager
-#### 打包项目
+### 打包项目
 
 #### cd 到指定项目位置
 ```sh
@@ -94,7 +94,7 @@ defter-accelerator [True / False] # 开启可大幅提升对象数据的序列�
 
 `./res` App的资源文件集合目录(可自定义命名)：
 
-(默认) 纯Python实现(即前后端均使用Python语言开发)将至少包含：
+### (默认) 纯Python实现(即前后端均使用Python语言开发)将至少包含：
 - `xxx.frontend` 通过 defter-frontendc 编译出的App的前端设计入口
 - `xxx.js` 通过 defter-frontendc 编译出的 JS api
 - `defter.js` defter 前端 (front-end) 方法与变量的传递核心
@@ -102,12 +102,13 @@ defter-accelerator [True / False] # 开启可大幅提升对象数据的序列�
 - `favicon.ico` 您喜爱的App的图标
 
 
-(可选) 半Python实现(即后端使用Python语言开发，前端使用HTML、Javascript等语言开发)将至少包含：
+### (可选) 半Python实现(即后端使用Python语言开发，前端使用HTML、Javascript等语言开发)将至少包含：
 - `xxx.html` App的前端设计入口 (需引用 defter.js )
 - `defter.js` defter 前端 (front-end) 方法与变量的传递核心
 - `favicon.ico` 您喜爱的App的图标
 
-注意：使用(可选)方法的代码将不会在 DefterVM (Defter Virtual Machine) 虚拟机中运行。
+> 注意：使用(可选)方法的代码将不会在 DefterVM (Defter Virtual Machine) 虚拟机中运行。  
+
 ## 3. 发布版本
 
 | 模块 | 版本 | 发布时间 |
@@ -120,13 +121,14 @@ defter-accelerator [True / False] # 开启可大幅提升对象数据的序列�
 
 ####修复问题:   
 > `2021/7/22 1.0 Beta issues` 在Mac操作系统下可能无法正常使用defter-cli来创建新的项目。  
-`2021/8/12 1.0 Beta2 issues` 解决了高并发异步方法引起的严重性阻塞问题。  
+
+> `2021/8/12 1.0 Beta2 issues` 解决了高并发异步方法引起的严重性阻塞问题。  
 
 ####新增特性:   
-> 1 `后端 (back-end)` 引入基于线程的协程并发，绕过Python GIL全局解释器锁，大幅提升App性能，解决了高并发异步方法引起的严重性阻塞问题。  
-2 `前端 (front-end)` 的模拟Python实现由原先的纯解释器解释模式转变为编译解释混合执行模式，并可与Google Chromium V8 JIT即时编译技术相互工作，大幅提升加载速度以及性能。  
-3 `前端 (front-end)` 让重要逻辑运行在 DefterVM (Defter Virtual Machine) 虚拟机上，在尽可能不损失性能的情况下，使得Javascript解释器无权干涉内建虚拟机从而保证执行的安全，大幅降低了前端 (front-end) 被恶意调试代码的可能。  
-4 `前后两端` 数据交换加速器 (仅限64位环境开启）使用 Rust lang 重构的json序列化和反序列化工具，开启后可拥有强劲的大数据对象交换速度和传输性能。
+> 1 `前后两端` 数据交换加速器 (仅限64位环境开启）使用 Rust lang 重构的json序列化和反序列化工具，开启后可拥有强劲的大数据对象交换速度和传输性能。  
+>> 2 `后端 (back-end)` 引入基于线程的协程并发，绕过Python GIL全局解释器锁，大幅提升App性能，解决了高并发异步方法引起的严重性阻塞问题。  
+>>> 3 `前端 (front-end)` 的模拟Python实现由原先的纯解释器解释模式转变为编译解释混合执行模式，并可与Google Chromium V8 JIT即时编译技术相互工作，大幅提升加载速度以及性能。  
+4 `前端 (front-end)` 让重要逻辑运行在 DefterVM (Defter Virtual Machine) 虚拟机上，在尽可能不损失性能的情况下，使得Javascript解释器无权干涉内建虚拟机从而保证执行的安全，大幅降低了前端 (front-end) 被恶意调试代码的可能。  
 
 ####已知问题:   
 > 由于基于线程的协程引入，暂不支持中央处理器单元的多核心负载分配。
