@@ -80,7 +80,7 @@ defter-packager [back-end python file] [src directory] # (两参数均为cd后�
 
 ###### 1.3.4 defter-accelerator.exe / defter-accelerator.sh / defter-accelerator
 
-#### 数据交换加速器 (Only 64bit)
+### 数据交换加速器 (Only 64bit)
 
 ```sh
 defter-accelerator [True / False] # 开启可大幅提升对象数据的序列化和反序列化性能，适用于大数据量高并发的App类型，但必须是64位的环境才被允许开启。
