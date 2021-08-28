@@ -7,6 +7,12 @@
 ### Git: https://github.com/BarryWangQwQ/Defter.git
 ### Authors: `BarryWang` —(main line) , `BOOKAI` —(branches)
 
+<div>
+<img src="https://img.shields.io/pypi/l/defter?style=for-the-badge" alt="license" />
+<img src="https://img.shields.io/pypi/v/defter?style=for-the-badge" alt="pypiversion" />
+<img src="https://img.shields.io/pypi/pyversions/defter?style=for-the-badge" alt="pyversions" />
+<img src="https://camo.githubusercontent.com/9e08593ef5174a8466232c462ee6f7cfb53679acf2acbadd5f7c7b0bf5eb1ee0/68747470733a2f2f696d672e736869656c64732e696f2f6c67746d2f67726164652f707974686f6e2f672f73616d75656c6877696c6c69616d732f45656c2e7376673f6c6f676f3d6c67746d267374796c653d666f722d7468652d6261646765" alt="codequal" />
+</div>
 
 ## 1. Quick Start
 
