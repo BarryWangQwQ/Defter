@@ -5,9 +5,10 @@
 ## "Defter, easier and quicker to develop your GUI Apps using Python in the built-in browser."
 ### URL: https://github.com/BarryWangQwQ/Defter
 ### Git: https://github.com/BarryWangQwQ/Defter.git
-### Authors: `BarryWang` —(main line) , `BOOKAI` —(branches)
+### Authors: `BarryWang` —(main line) , `BOOKAI` —(branches)  
 
 <div>
+<div> </div>
 <img src="https://img.shields.io/pypi/l/defter?style=for-the-badge" alt="license" />
 <img src="https://img.shields.io/pypi/v/defter?style=for-the-badge" alt="pypiversion" />
 <img src="https://img.shields.io/pypi/pyversions/defter?style=for-the-badge" alt="pyversions" />
