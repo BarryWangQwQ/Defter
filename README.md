@@ -12,9 +12,9 @@
 
 ### 1.1 安装
 
-> Python版本 `3.6+`
+> Python版本 `3.8+`
 
-> 支持的系统 `Windows` `Linux` `Mac`(实验) `支持所有基于较新标准的浏览器系统`
+> 系统 `Windows` `Linux` `Mac`(实验) `以及所有基于较新标准的浏览器系统`
 
 ```sh
 pip install defter # -i https://pypi.org/simple
@@ -48,7 +48,7 @@ defter -create [here / other path]
 ###### 1.3.2 defter-frontendc.exe / defter-frontendc.sh / defter-frontendc
 #### 编译前端文件
 ```sh
-defter-frontendc [front-end python file] [src directory] # 编译.py前端文件并输出到指定资源目录
+defter-frontendc [front-end python file] [src directory] # 编译.py前端文件并输出到指定资源目录 (两参数均为绝对路径)
 ```
 
 编译后输出的文件：
@@ -68,7 +68,7 @@ cd [defter project path] # 确保该项目下存在后端python文件，同时�
 
 #### 执行打包
 ```sh
-defter-packager [back-end python file] [src directory] # 可选参数: -F 打包成一个可执行文件(有Console) -Fw 打包成一个可执行文件(无Console)
+defter-packager [back-end python file] [src directory] # (两参数均为cd后的相对路径) 可选参数: -F 打包成一个可执行文件(有Console) -Fw 打包成一个可执行文件(无Console)
 ```
 
 ###### 1.3.4 defter-accelerator.exe / defter-accelerator.sh / defter-accelerator
