@@ -59,10 +59,11 @@ defter-frontendc [front-end python file] [src directory] # 编译.py前端文件
 ```
 
 编译后输出的文件：
-- `xxx.html` App的前端入口
-- `xxx.js` 主要的 JavaScript API
-- `DefterVM.runtime.js` DefterVM Runtime library 运行库 (如果目录中原本存在则不会输出)  
-- `~.js` 更多 JavaScript API  
+- `xxx.html` App的前端入口  
+  `./build` 前端编译器编译后输出的目录：
+    - `xxx.js` 主要的 JavaScript API
+    - `DefterVM.runtime.js` DefterVM Runtime library 运行库 (如果目录中原本存在则不会输出)  
+    - `~.js` 更多 JavaScript API  
 
 Tip: 后端 (back-end) Python文件中只需在 backend.start() 方法引入`xxx.html`参数即可指明前端 (front-end)的入口。
 
@@ -96,10 +97,11 @@ defter-accelerator [True / False] # 开启可大幅提升对象数据的序列�
 `./res` App资源文件的集合目录(可自定义命名)：
 
 ### (默认) 纯Python实现(即前后端均使用Python语言开发)将至少包含：
-- `xxx.html` 通过 defter-frontendc 编译出的App的前端设计入口
-- `xxx.js` 通过 defter-frontendc 编译出的主要 JS api
-- `defter.js` defter 前端 (front-end) 内部方法与变量的传递核心
-- `DefterVM.runtime.js` DefterVM (Defter Virtual Machine) 虚拟机运行库
+- `xxx.html` 通过 defter-frontendc 编译出的App的前端设计入口  
+- `defter.js` defter 前端 (front-end) 内部方法与变量的传递核心  
+  `./build` 前端编译器编译后输出的目录：
+    - `xxx.js` 通过 defter-frontendc 编译出的主要 JS api
+    - `DefterVM.runtime.js` DefterVM (Defter Virtual Machine) 虚拟机运行库
 - `favicon.ico` 您喜爱的App图标
 
 
