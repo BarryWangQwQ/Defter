@@ -125,6 +125,8 @@ defter-accelerator [True / False] # 开启可大幅提升对象数据的序列�
 
 > `defter-frontendc` 前端 (front-end) 编译器在64位环境下的编译速度和准确性得到优化。
 
+> `defter-frontendc` 前端 (front-end) 编译器的输出目录结构稍作微调，使其变得更加清晰明了。
+
 > `defter-accelerator` 数据交换加速器的加速逻辑得到优化。
 
 ####修复问题:
