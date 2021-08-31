@@ -29,7 +29,7 @@ pip install defter # -i https://pypi.org/simple
 
 ### 1.2 快速体验
 
-#### 使用cli命令创建出一个示例
+#### 使用cli命令创建一个示例
 ```sh
 defter -demo here
 ```
@@ -55,27 +55,28 @@ defter -create [here / other path]
 ###### 1.3.2 defter-frontendc.exe / defter-frontendc.sh / defter-frontendc
 ### 编译前端文件
 ```sh
-defter-frontendc [front-end python file] [src directory] # 编译.py前端文件并输出到指定资源目录 (两参数均为绝对路径)
+defter-frontendc [front-end python file] [src directory] # 编译.py前端文件并输出到指定资源(src)目录
 ```
 
 编译后输出的文件：
-- `xxx.frontend` App的前端设计入口
-- `xxx.js` JavaScript API
+- `xxx.html` App的前端入口
+- `xxx.js` 主要的 JavaScript API
 - `DefterVM.runtime.js` DefterVM Runtime library 运行库 (如果目录中原本存在则不会输出)  
+- `~.js` 更多 JavaScript API  
 
-Tip: 在后端 (back-end) Python文件中只需在 Backend.Start() 中引入`xxx.frontend`即可指明前端 (front-end)的入口。
+Tip: 后端 (back-end) Python文件中只需在 backend.start() 方法引入`xxx.html`参数即可指明前端 (front-end)的入口。
 
 ###### 1.3.3 defter-packager.exe / defter-packager.sh / defter-packager
 ### 打包项目
 
 #### cd 到指定项目位置
 ```sh
-cd [defter project path] # 确保该项目下存在后端python文件，同时也存在伴随的资源目录。
+cd [defter project path] # 确保该项目下存在后端python文件，同时也存在伴随的资源(src)目录。
 ```
 
 #### 执行打包
 ```sh
-defter-packager [back-end python file] [src directory] # (两参数均为cd后的相对路径) 可选参数: -F 打包成一个可执行文件(有Console) -Fw 打包成一个可执行文件(无Console)
+defter-packager [back-end python file] [src directory] # (两参数均为cd后的相对路径) 可选参数: -F 打包成一个可执行文件(有Console) -Fw 打包成一个可执行文件(无Console) -i 添加您喜欢的ico图标
 ```
 
 ###### 1.3.4 defter-accelerator.exe / defter-accelerator.sh / defter-accelerator
@@ -88,24 +89,24 @@ defter-accelerator [True / False] # 开启可大幅提升对象数据的序列�
 
 ## 2. 项目结构
 
-`backend.py` App的后端服务主要入口(可自定义命名)：
+`backend.py` App后端服务的主要入口(可自定义命名)：
 
 - `用于编写后端服务程序和App启动配置`
 
-`./res` App的资源文件集合目录(可自定义命名)：
+`./res` App资源文件的集合目录(可自定义命名)：
 
 ### (默认) 纯Python实现(即前后端均使用Python语言开发)将至少包含：
-- `xxx.frontend` 通过 defter-frontendc 编译出的App的前端设计入口
-- `xxx.js` 通过 defter-frontendc 编译出的 JS api
-- `defter.js` defter 前端 (front-end) 方法与变量的传递核心
+- `xxx.html` 通过 defter-frontendc 编译出的App的前端设计入口
+- `xxx.js` 通过 defter-frontendc 编译出的主要 JS api
+- `defter.js` defter 前端 (front-end) 内部方法与变量的传递核心
 - `DefterVM.runtime.js` DefterVM (Defter Virtual Machine) 虚拟机运行库
-- `favicon.ico` 您喜爱的App的图标
+- `favicon.ico` 您喜爱的App图标
 
 
-### (可选) 半Python实现(即后端使用Python语言开发，前端使用HTML、Javascript等语言开发)将至少包含：
-- `xxx.html` App的前端设计入口 (需引用 defter.js )
-- `defter.js` defter 前端 (front-end) 方法与变量的传递核心
-- `favicon.ico` 您喜爱的App的图标
+### (可选) 半Python实现(即后端使用Python语言开发，前端使用Javascript等语言和框架开发)将至少包含：
+- `xxx.html` App的前端入口 (需引用 defter.js )
+- `defter.js` defter 前端 (front-end) 内部方法与变量的传递核心
+- `favicon.ico` 您喜爱的App图标
 
 > 注意：使用(可选)方法的代码将不会在 DefterVM (Defter Virtual Machine) 虚拟机中运行。  
 
@@ -113,13 +114,23 @@ defter-accelerator [True / False] # 开启可大幅提升对象数据的序列�
 
 | 模块 | 版本 | 发布时间 |
 | --- | --- | --- |
+| `defter` | `2.0 Beta2` | `2021/8/31` |
 | `defter` | `2.0 Beta` | `2021/8/27` |
 | `defter` | `1.0 Beta2` | `2021/8/12` |
 | `defter` | `1.0 Beta` | `2021/7/22` |
 
 ### 当前版本  
 
-####修复问题:   
+> `defter-frontendc` 前端 (front-end) 编译器在64位环境下的编译速度和准确性得到优化。
+
+> `defter-accelerator` 数据交换加速器的加速逻辑得到优化。
+
+####修复问题:
+
+> `2021/8/27 2.0 Beta issues` 包无法被完全卸载。
+
+> `2021/8/27 2.0 Beta issues` 前端 (front-end) 编译器发生异常引发的一些故障。(defter-frontendc)
+
 > `2021/7/22 1.0 Beta issues` 在Mac操作系统下可能无法正常使用defter-cli来创建新的项目。  
 
 > `2021/8/12 1.0 Beta2 issues` 解决了高并发异步方法引起的严重性阻塞问题。  
@@ -145,6 +156,8 @@ defter-accelerator [True / False] # 开启可大幅提升对象数据的序列�
 2 分布请求时，异步高并发导致线程阻塞。
 
 >`2021/8/20` Defter 2.0 beta 计划启动。
+
+>`2021/8/27` Defter 2.0 beta 发布。
 
 
 ## 4. References & Thanks

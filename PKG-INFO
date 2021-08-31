@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: defter
-Version: 2.0b0
+Version: 2.0b2
 Summary: Project Defter App
 Home-page: https://github.com/BarryWangQwQ/defter
 Author: BarryWang
@@ -18,16 +18,14 @@ Description: # **Project Defter App**
         
         > Defter URL: https://github.com/BarryWangQwQ/defter
         
-        > **README: https://github.com/BarryWangQwQ/Defter/blob/main/README.md**
+        > README: https://github.com/BarryWangQwQ/Defter/blob/main/README.md
 Keywords: defter,gui,python,html,javascript,electron
 Platform: UNKNOWN
 Classifier: Programming Language :: Python :: 3
-Classifier: Development Status :: 4 - Beta
-Classifier: License :: OSI Approved :: MIT License
-Classifier: Programming Language :: Python :: 3.6
-Classifier: Programming Language :: Python :: 3.7
 Classifier: Programming Language :: Python :: 3.8
 Classifier: Programming Language :: Python :: 3.9
-Requires-Python: >=3.6
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: License :: OSI Approved :: MIT License
+Requires-Python: >=3.8
 Description-Content-Type: text/markdown
 Provides-Extra: jinja2

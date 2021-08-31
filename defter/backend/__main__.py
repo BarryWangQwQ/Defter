@@ -35,4 +35,5 @@ def main():
     pyi.run(full_args)
 
 
-main()
+if __name__ == '__main__':
+    main()

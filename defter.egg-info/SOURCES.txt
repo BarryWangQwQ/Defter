@@ -1,3 +1,4 @@
+LICENSE
 README.md
 setup.py
 defter/__init__.py
@@ -7,7 +8,6 @@ defter.egg-info/dependency_links.txt
 defter.egg-info/entry_points.txt
 defter.egg-info/requires.txt
 defter.egg-info/top_level.txt
-defter/backend/__init__.acceleration
 defter/backend/__init__.py
 defter/backend/__main__.py
 defter/backend/browsers.py
@@ -23,12 +23,13 @@ defter/feature/xpopen.py
 defter/feature/demo/__init__.py
 defter/feature/demo/backend.py
 defter/feature/demo/frontend-demo.py
-defter/feature/demo/src/DefterVM.runtime.js
 defter/feature/demo/src/__init__.py
 defter/feature/demo/src/defter.js
 defter/feature/demo/src/favicon.ico
-defter/feature/demo/src/frontend-demo.frontend
-defter/feature/demo/src/frontend-demo.js
+defter/feature/demo/src/frontend-demo.html
+defter/feature/demo/src/build/DefterVM.runtime.js
+defter/feature/demo/src/build/__init__.py
+defter/feature/demo/src/build/frontend-demo.js
 defter/feature/new/__init__.py
 defter/feature/new/backend.py
 defter/feature/new/frontend.py

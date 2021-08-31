@@ -23,20 +23,20 @@ def platform_requires():
 
 setup(
     name='defter',
-    version="2.0b0",
+    version="2.0b2",
     author="BarryWang",
     author_email="StarBarry777@qq.com",
     description="Project Defter App",
     url="https://github.com/BarryWangQwQ/defter",
     packages=find_packages(),
     package_data={
-        '': ['*.js', '*.ico', '*.frontend', '__init__.acceleration', '__init__.default'],
+        '': ['*.js', '*.ico', '*.html'],
     },
     install_requires=platform_requires(),
     extras_require={
         "jinja2": ['jinja2>=2.10']
     },
-    python_requires='>=3.6',
+    python_requires='>=3.8',
     long_description=long_description,
     long_description_content_type='text/markdown',
     keywords=['defter', 'gui', 'python', 'html', 'javascript', 'electron'],
@@ -47,12 +47,10 @@ setup(
         'defter-accelerator = defter.feature.accelerator:main',
     ]},
     classifiers=[
-        "Programming Language :: Python :: 3",
-        'Development Status :: 4 - Beta',
-        'License :: OSI Approved :: MIT License',
-        'Programming Language :: Python :: 3.6',
-        'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.9',
+        'Programming Language :: Python :: Implementation :: CPython',
+        'License :: OSI Approved :: MIT License',
     ],
 )

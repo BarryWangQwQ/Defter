@@ -9,4 +9,4 @@ def py_fun(x):
     return "Hello " + x
 
 
-backend.start('frontend-demo.frontend')    # Set up front-end portal and start back-end.
+backend.start('frontend-demo.html')    # Set up front-end portal and start back-end.

@@ -1,4 +1,5 @@
 import os
+import re
 import sys
 import argparse
 from defter import backend
@@ -19,33 +20,31 @@ def main():
     max_bit = sys.maxsize
 
     if boolean == "True":
-        if os.path.exists(path + '/__init__.acceleration'):
-            if os.path.exists(path + '/__init__.default'):
-                os.remove(path + '/__init__.default')
-                print("Warning: Accelerator cache status has been cleared. Please try again.")
-            else:
-                if max_bit > 2 ** 32:
-                    os.rename(path + '/__init__.py', path + '/__init__.default')
-                    os.rename(path + '/__init__.acceleration', path + '/__init__.py')
-                    print("Accelerator is enabled.")
-                else:
-                    print('Error: Failed to enable acceleration. (Your platform may be 32-bit or does not support acceleration.)')
+        if max_bit > 2 ** 32:
+            with open(path + '/__init__.py', 'r', encoding="UTF-8") as init_py:
+                init_py_code = init_py.read()
+                init_py_code = re.sub("import json as jsn", "import orjson as jsn", init_py_code)
+                init_py_code = re.sub('jsn.dumps\(obj, default=lambda o: None\)',
+                                      'str(jsn.dumps(obj, default=lambda o: None), encoding="utf-8")', init_py_code)
+            with open(path + '/__init__.py', 'w+', encoding="UTF-8") as init_py:
+                init_py.write(init_py_code)
+            print("Accelerator is activated.")
         else:
-            print("Accelerator has been enabled.")
+            print('Error: Failed to activate acceleration. (Your platform may be 32-bit or does not support acceleration.)')
     elif boolean == "False":
-        if os.path.exists(path + '/__init__.default'):
-            if os.path.exists(path + '/__init__.acceleration'):
-                os.remove(path + '/__init__.default')
-                print("Warning: Accelerator cache status has been cleared. Please try again.")
-            else:
-                if max_bit > 2 ** 32:
-                    os.rename(path + '/__init__.py', path + '/__init__.acceleration')
-                    os.rename(path + '/__init__.default', path + '/__init__.py')
-                    print("Accelerator is disabled.")
-                else:
-                    print("Accelerator has been disabled.")
+        if max_bit > 2 ** 32:
+            with open(path + '/__init__.py', 'r', encoding="UTF-8") as init_py:
+                init_py_code = init_py.read()
+                init_py_code = re.sub("import orjson as jsn", "import json as jsn", init_py_code)
+                init_py_code = re.sub('str\(jsn.dumps\(obj, default=lambda o: None\), encoding="utf-8"\)',
+                                      'jsn.dumps(obj, default=lambda o: None)', init_py_code)
+            with open(path + '/__init__.py', 'w+', encoding="UTF-8") as init_py:
+                init_py.write(init_py_code)
+            print("Accelerator is deactivated.")
         else:
-            print("Accelerator has been disabled.")
+            print('Error: Failed to deactivate acceleration. (Your platform may be 32-bit or does not support acceleration.)')
+    else:
+        print('Wrong parameters!')
 
 
 if __name__ == '__main__':
