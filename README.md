@@ -101,7 +101,7 @@ defter-accelerator [True / False] # 开启可大幅提升对象数据的序列�
 
 `./res` App资源文件的集合目录(可自定义命名)：
 
-### (默认) 纯Python实现(即前后端均使用Python语言开发)将至少包含：
+### (默认) 纯Python实现(即前后端均使用Python语言开发，仅使用API方式与外部语言与支持的框架)将至少包含：
 - `xxx.html` 通过 defter-frontendc 编译出的App的前端设计入口  
 - `defter.js` defter 前端 (front-end) 内部方法与变量的传递核心  
   `./build` 前端编译器编译后输出的目录：
@@ -110,7 +110,7 @@ defter-accelerator [True / False] # 开启可大幅提升对象数据的序列�
 - `favicon.ico` 您喜爱的App图标
 
 
-### (可选) 半Python实现(即后端使用Python语言开发，前端使用Javascript等语言和框架开发)将至少包含：
+### (可选) 半Python实现(即后端使用Python语言开发，前端完全使用Javascript等其他语言和框架开发)将至少包含：
 - `xxx.html` App的前端入口 (需引用 defter.js )
 - `defter.js` defter 前端 (front-end) 内部方法与变量的传递核心
 - `favicon.ico` 您喜爱的App图标
