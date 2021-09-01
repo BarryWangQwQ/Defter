@@ -20,7 +20,7 @@
 ####     Project Defter App 是一种思想，旨在开发者在开发前后端分离式应用程序时无需关注中间请求与返回方式，这一切将由 Defter Core 来接管。  
 ####     Defter 把前后端复杂的数据交换模式抽象为 后端 (back-end) 与 前端 (front-end) 两个模型。  
 ####     因此，在 Python 中编写的方法以及在前端使用 Python/JavaScript 中编写的方法均可使用简单暴露从而实现相互调用以及数据交互，无需过多的操作与API设计。  
-####     Defter 还集成了强大的前端 Web Python 编译器，对于喜爱使用 Python 的开发者，其可以采纯Python代码来轻松构建前后端应用。并且重要的逻辑代码还可在几乎不损失性能的情况下安全的运行在内建虚拟机 DefterVM 之上，且与 Javascript 无缝协同。
+####     Defter 还集成了强大的前端 Web Python 编译器，对于喜爱使用 Python 的开发者，其可以采纯 Python 代码来轻松构建前后端应用。并且重要的逻辑代码还可在几乎不损失性能的情况下安全的运行在内建虚拟机 DefterVM 之上，且与 Javascript 无缝协同。
 
 ### 1.1 安装
 
