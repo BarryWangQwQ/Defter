@@ -1,6 +1,6 @@
 # Project Defter App 
 
-<div align=center><img width="355" height="144" src="https://s3.bmp.ovh/imgs/2021/08/ff22d30dc2db2a7d.png"/></div>
+<div align=center><img width="355" height="144" src="https://s3.bmp.ovh/imgs/2021/08/ff22d30dc2db2a7d.png" style="border-radius: 15px; box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.25);"/></div>
 
 ## "Defter, easier and quicker to develop your GUI Apps using Python in the built-in browser."
 ### URL: https://github.com/BarryWangQwQ/Defter
@@ -110,7 +110,7 @@ defter-accelerator [True / False] # 开启可大幅提升对象数据的序列�
 - `defter.js` defter 前端 (front-end) 内部方法与变量的传递核心
 - `favicon.ico` 您喜爱的App图标
 
-> 注意：使用(可选)方法的代码将不会在 DefterVM (Defter Virtual Machine) 虚拟机中运行。  
+> 注意：使用(可选)方法的代码将不会在 DefterVM (Defter Virtual Machine) 虚拟机中运行。
 
 ## 3. 发布版本
 
@@ -163,8 +163,11 @@ defter-accelerator [True / False] # 开启可大幅提升对象数据的序列�
 
 >`2021/8/27` Defter 2.0 beta 发布。
 
+## 4. 了解更多
 
-## 4. References & Thanks
+<img src = 'https://s3.bmp.ovh/imgs/2021/09/ebfe7acb5844ec0c.png' style="border-radius: 15px; box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.25);"/>
+
+## 5. References & Thanks
 
 | Projects | URLs |
 | --- | --- |
