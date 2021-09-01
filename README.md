@@ -165,7 +165,7 @@ defter-accelerator [True / False] # 开启可大幅提升对象数据的序列�
 
 ## 4. 了解更多
 
-<img src = 'https://s3.bmp.ovh/imgs/2021/09/ebfe7acb5844ec0c.png' width="976.5" height="1170.5" style="border-radius: 15px; box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.25);"/>
+<img src = 'https://s3.bmp.ovh/imgs/2021/09/ebfe7acb5844ec0c.png' style="border-radius: 15px; box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.25);"/>
 
 ## 5. References & Thanks
 
