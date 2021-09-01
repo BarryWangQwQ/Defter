@@ -23,7 +23,7 @@ def platform_requires():
 
 setup(
     name='defter',
-    version="2.0b2",
+    version="2.0b3",
     author="BarryWang",
     author_email="StarBarry777@qq.com",
     description="Project Defter App",

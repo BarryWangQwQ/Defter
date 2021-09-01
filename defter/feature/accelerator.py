@@ -23,9 +23,10 @@ def main():
         if max_bit > 2 ** 32:
             with open(path + '/__init__.py', 'r', encoding="UTF-8") as init_py:
                 init_py_code = init_py.read()
-                init_py_code = re.sub("import json as jsn", "import orjson as jsn", init_py_code)
-                init_py_code = re.sub('jsn.dumps\(obj, default=lambda o: None\)',
-                                      'str(jsn.dumps(obj, default=lambda o: None), encoding="utf-8")', init_py_code)
+                if init_py_code.find('import orjson as jsn') == -1:
+                    init_py_code = re.sub("import json as jsn", "import orjson as jsn", init_py_code)
+                    init_py_code = re.sub('jsn.dumps\(obj, default=lambda o: None\)',
+                                          'str(jsn.dumps(obj, default=lambda o: None), encoding="utf-8")', init_py_code)
             with open(path + '/__init__.py', 'w+', encoding="UTF-8") as init_py:
                 init_py.write(init_py_code)
             print("Accelerator is activated.")
@@ -35,9 +36,10 @@ def main():
         if max_bit > 2 ** 32:
             with open(path + '/__init__.py', 'r', encoding="UTF-8") as init_py:
                 init_py_code = init_py.read()
-                init_py_code = re.sub("import orjson as jsn", "import json as jsn", init_py_code)
-                init_py_code = re.sub('str\(jsn.dumps\(obj, default=lambda o: None\), encoding="utf-8"\)',
-                                      'jsn.dumps(obj, default=lambda o: None)', init_py_code)
+                if init_py_code.find('import json as jsn') == -1:
+                    init_py_code = re.sub("import orjson as jsn", "import json as jsn", init_py_code)
+                    init_py_code = re.sub('str\(jsn.dumps\(obj, default=lambda o: None\), encoding="utf-8"\)',
+                                          'jsn.dumps(obj, default=lambda o: None)', init_py_code)
             with open(path + '/__init__.py', 'w+', encoding="UTF-8") as init_py:
                 init_py.write(init_py_code)
             print("Accelerator is deactivated.")
